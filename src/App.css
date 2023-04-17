@@ -5,7 +5,5 @@ body{
   flex-wrap: wrap;
   background-color: #323437;
   color: #646669;
-  /* align-items: center; */
   justify-content: center;
-  /* border: 2px solid yellow; */
 }

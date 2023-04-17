@@ -6,4 +6,6 @@
     background-color: #454e59f3;
     color:#c7a318;
     height: 2.5rem;
+    position: absolute;
+    width: 100%;
 }
