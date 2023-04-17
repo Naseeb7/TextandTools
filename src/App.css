@@ -1,0 +1,9 @@
+body{
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #323437;
+  color: #646669;
+  justify-content: center;
+}
