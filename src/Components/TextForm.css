@@ -1,0 +1,208 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+
+.FormContainer{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    text-align: center;
+    justify-content: center ;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+    /* border: 2px solid red; */
+}
+.heading{
+    font-family: 'Raleway', sans-serif;
+}
+.fonts{
+    font-family: 'Raleway', sans-serif;
+}
+#textarea{
+    width: 80%;
+    background-color: #323437;
+    color: #abaaa1;
+    padding: 5px;
+    margin: 5px;
+    outline: 1px solid #ecc31f;
+    outline-style: inset;
+    border-radius: 5px;
+    font-family: 'Source Code Pro', monospace;
+    transition: 0.3s;
+}
+#textarea:hover{
+    outline: 2px solid #c7a318;
+    outline-style: inset;
+}
+#textarea:focus{
+    outline: 2px solid #c7a318;
+    outline-style: outset;
+    /* outline: none; */
+}
+.textsummary{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
+.comments{
+    font-size: x-small;
+    position: relative;
+    top: 7px;
+    font-family: 'Space Grotesk', sans-serif;
+}
+.btncontainer{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2a2b2e;
+    font-family: 'Space Grotesk', sans-serif;
+    color: #646669;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    font-size: initial;
+    width: auto;
+    transition: 0.1s;
+}
+.btn:hover{
+    outline: none;
+    scale: 1.2;
+    cursor: pointer;
+}
+.replaceContainer{
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+#replacethis{
+    display: flex;
+    background-color: #2a2b2e;
+    border: none;
+    border-radius: 5px;
+    color: #646669;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+}
+#replacethis:focus{
+    /* outline: none; */
+    outline: 1px solid #c7a318;
+    background-color: #242525;
+    color: #646669;
+}
+#replacewith{
+    display: flex;
+    background-color: #2a2b2e;
+    border: none;
+    border-radius: 5px;
+    color: #646669;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+}
+#replacewith:focus{
+    /* outline: none; */
+    outline: 1px solid #c7a318;
+    background-color: #242525;
+    color: #646669;
+}
+.replace{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
+#replacebtn{
+    margin: 5px;
+}
+.trimContainer{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+.trimvisible{
+    display: flex;
+}
+#trimvalue{
+    display: flex;
+    background-color: #2a2b2e;
+    border: none;
+    border-radius: 5px;
+    color: #646669;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-family: 'Source Code Pro', monospace;
+}
+#trimvalue:focus{
+    outline: 1px solid #c7a318;
+    background-color: #242525;
+    color: #646669;
+}
+.trim{
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
+
+#cbox{
+    display: none;
+}
+.extraction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+.previewContainer{
+    /* border: 2px solid red; */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: center;
+}
+#preview{
+    font-family: 'Source Code Pro', monospace;
+}
+::-webkit-scrollbar {
+    width: 5px;
+  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 2px 0 5px grey; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c7a318; 
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8a7627; 
+  }
+  .border{
+    outline: 1px solid black;
+  }

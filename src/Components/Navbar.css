@@ -1,0 +1,80 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+
+.navbarContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    /* background-color: #c7a318; */
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 5px; */
+    padding: 5px;
+    /* border: 2px solid red; */
+}
+.title{
+    font-size: 2rem;
+    color: Black;
+    /* margin: 5px; */
+    padding: 5px;
+    padding-left: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.links{
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    color: #646669;
+    font-family: 'Roboto Condensed', sans-serif;
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+}
+.links:hover{
+    color: #d1d0c5;
+    scale: 1.2;
+}
+.themebtns{
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    flex-wrap: wrap;
+    /* position: relative; */
+    justify-content: space-evenly;
+}
+.themetext{
+    display: flex;
+    /* position: absolute; */
+    left: 1rem;
+}
+.searchContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 5px;
+    /* align-items: flex-start; */
+    /* position: absolute;
+    top: 0px;
+    right: 0px; */
+}
+.searchbar{
+    display: flex;
+    background-color: #2a2b2e;
+    border: none;
+    margin: 1px;
+    color: #646669;
+    font-family: 'Source Code Pro', monospace;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    transition-timing-function: ease-in-out;
+}
+.searchbar:focus{
+    /* outline: none; */
+    outline: 1px solid #c7a318;
+    background-color: #242525;
+    color: #646669;
+}
+#searchbtn{
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}

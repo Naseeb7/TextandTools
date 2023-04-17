@@ -1,0 +1,10 @@
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.abouttext{
+    display: flex;
+    width: 60%;
+}
