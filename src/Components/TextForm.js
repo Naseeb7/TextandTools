@@ -10,7 +10,7 @@ export default function TextForm(props) {
       setText(text.toUpperCase())
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Denied","Enter text first")
     }
   }
   const handlelowClick = () => {
@@ -18,7 +18,7 @@ export default function TextForm(props) {
       setText(text.toLowerCase())
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Denied","Enter text first")
     }
   }
   const handleonChange = (e) => {
@@ -50,30 +50,21 @@ export default function TextForm(props) {
   const handleTrim = () => {
     if (text !== "") {
       let cbox = document.getElementById("cbox")
-      cbox.style.display = "flex"
+      cbox.classList.toggle("cbox")
       let trimvalue = document.getElementById("trimvalue").value
       let newText = text.split(" ", trimvalue).join(" ")
       document.getElementById("preview").innerHTML = newText
-      //Add css to these 
       let yesbtn = document.getElementById("yesbtn")
       let nobtn = document.getElementById("nobtn")
-      const scaling = [
-        { transform: "scale(0)" },
-        { transform: "scale(1)" }
-      ]
-      const scalingtime = {
-        duration: 300
-      }
-      cbox.animate(scaling, scalingtime)
       yesbtn.onclick = () => {
         setText(newText)
-        document.getElementById("cbox").style.display = "none"
+        cbox.classList.toggle("cbox")
         props.showAlert("Success", "Text trimmed successfully!")
       }
       nobtn.onclick = () => {
         document.getElementById("preview").innerHTML = text
         // setText(text)
-        document.getElementById("cbox").style.display = "none"
+        cbox.classList.toggle("cbox")
         props.showAlert("Denied", "Denied by user!")
       }
     }
@@ -120,47 +111,51 @@ export default function TextForm(props) {
       props.showAlert("Empty", "Nothing to copy")
     }
   }
+  const handleClearsearch=()=>{
+    document.getElementById("occurances").innerHTML = ""
+    document.getElementById("preview").innerHTML = document.getElementById("textarea").value
+  }
   return (
     <>
       <div className="FormContainer">
         <div className='textContainer'>
           <h1 className='heading' style={props.mode}>{props.heading}</h1>
-          <textarea id="textarea" value={text} onChange={handleonChange} style={props.mode} rows="10" placeholder='Enter text here'></textarea>
-          <h3 className='heading textsummary' style={props.mode}>Your Text Summary</h3>
-          <span className='fonts textsummary' style={props.mode}>{text.split(' ').filter((x) => x.trim().length > 0).length} words with {text.length} characters and should take about {Math.round(0.008 * text.split('').length)} minutes to read the whole text.</span>
+          <textarea id="textarea" value={text} onChange={handleonChange} rows="10" placeholder='Enter text here'></textarea>
+          <div className='fonts textsummary' style={props.mode}>{text.split(' ').filter((x) => x.trim().length > 0).length} words with {text.length} characters and about {Math.round(0.008 * text.split('').length)} minutes to read the whole text.</div>
 
         </div>
         <div className="btncontainer">
-          <button className="btn border" id='upbtn' style={props.mode} onClick={handleupClick}>Convert to Uppercase</button>
-          <button className="btn border" id='lowbtn' style={props.mode} onClick={handlelowClick}>Convert to Lowercase</button>
-          <button className="btn border" id="resetbtn" style={props.mode} onClick={handleReset}>Reset</button>
-          <button className="btn border" id="numberextraction" style={props.mode} onClick={handleNumberex}>Extract numbers</button>
-          <button className="btn border" id="emailextraction" style={props.mode} onClick={handleEmailex}>Extract Emails</button>
-          <button className="btn border" id="copybtn" style={props.mode} onClick={handleCopy}>Copy</button>
+          <button className="btn" id='upbtn' onClick={handleupClick}>Convert to Uppercase</button>
+          <button className="btn" id='lowbtn' onClick={handlelowClick}>Convert to Lowercase</button>
+          <button className="btn" id="resetbtn" onClick={handleReset}>Reset</button>
+          <button className="btn" id="numberextraction" onClick={handleNumberex}>Extract numbers</button>
+          <button className="btn" id="emailextraction" onClick={handleEmailex}>Extract Emails</button>
+          <button className="btn" id="copybtn" onClick={handleCopy}>Copy</button>
         </div>
         <div className="replaceContainer">
           <label htmlFor="replacethis" className="replace fonts" style={props.mode}>Replace</label>
-          <input type="text" htmlFor="replacethis" className="replace border" style={props.mode} id="replacethis" placeholder='this' />
+          <input type="text" htmlFor="replacethis" className="replace" style={props.mode} id="replacethis" placeholder='this' />
           <label htmlFor="replacewith" className="replace fonts" style={props.mode}>with</label>
-          <input type="text" htmlFor="replacewith" className="replace border" style={props.mode} id="replacewith" placeholder='that' />
-          <button className="btn border" id="replacebtn" style={props.mode} onClick={handleReplace}>Replace</button>
+          <input type="text" htmlFor="replacewith" className="replace" style={props.mode} id="replacewith" placeholder='that' />
+          <button className="btn" id="replacebtn" onClick={handleReplace}>Replace</button>
         </div>
         <div className="trimContainer">
           <div className="trimvisible">
             <label htmlFor="trim" className="trim fonts" style={props.mode}>Trim to </label>
             <input type="text" id="trimvalue" className='border' placeholder='100' style={props.mode} />
             <label htmlFor="trim" className="trim fonts" style={props.mode}>words</label>
-            <button htmlFor="trim" className="btn border" style={props.mode} id="trimbtn" onClick={handleTrim}>Trim</button>
+            <button htmlFor="trim" className="btn" id="trimbtn" onClick={handleTrim}>Trim</button>
           </div>
-          <div id="cbox">
+          <div id="cbox" className='cboxhidden'>
             <Confirmbox confirmboxtext={"Are you sure you want to trim?"} comment={"*Please review first"} />
           </div>
         </div>
       </div>
       <div className="previewContainer" >
+          <button className='btn clearbtn' onClick={handleClearsearch}>Clear Search</button>
         <h2 className='heading' style={props.mode}>Preview</h2>
         <span id='occurances' className='occurances fonts' style={props.mode}></span>
-        <p id='preview' style={props.mode}>{text.length > 0 ? text : "Enter text to preview it here."}</p>
+        <p id='preview'>{text.length > 0 ? text : "Enter text to preview it here."}</p>
         <div className="extraction heading">
           <p id="numberextracted"></p>
           <p id="emailextracted"></p>

@@ -3,7 +3,33 @@ body{
   box-sizing: border-box;
   flex-direction: column;
   flex-wrap: wrap;
-  background-color: #323437;
-  color: #646669;
+  background-color: black;
+  color: #c7a318;
   justify-content: center;
+  overflow-x: hidden;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3b3b3bd9;
+  color: #c7a318;
+  font-family: 'Space Grotesk', sans-serif;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 5px;
+  font-size: initial;
+  width: auto;
+  transition: 0.2s;
+}
+.btn:hover{
+  background-color: #c7a318;
+  color: black;
+  scale: .9;
+  cursor: pointer;
+  outline: none;
+  border: none;
 }

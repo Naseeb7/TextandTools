@@ -32,11 +32,10 @@
     font-size: 1rem;
     color: #646669;
     font-family: 'Roboto Condensed', sans-serif;
-    transition: .2s;
-    transition-timing-function: ease-in-out;
+    transition: .1s;
 }
 .links:hover{
-    scale: 1.2;
+    scale: .9;
 }
 .themebtns{
     display: flex;
@@ -59,23 +58,20 @@
 }
 .searchbar{
     display: flex;
-    background-color: #2a2b2e;
+    background-color: #3b3b3bd9;
+    color: #c7a318;
     border: none;
-    color: #646669;
+    outline: none;
     font-family: 'Source Code Pro', monospace;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     transition-timing-function: ease-in-out;
     margin: 5px;
-    padding: 5px;
+    padding: 8px;
     margin-right: 0;
 }
-/* .searchbar:focus{
-    outline: 1px solid #c7a318;
-    background-color: #242525;
-    color: #646669;
-} */
 #searchbtn{
+    outline: none;
     margin-left: 0;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;

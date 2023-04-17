@@ -31,7 +31,7 @@
   }
   
   .slider:before {
-    background-color: #fff;
+    background-color: black;
     bottom: 4px;
     content: "";
     height: .5rem;

@@ -29,12 +29,12 @@
     width: 80%;
     background-color: #323437;
     color: #abaaa1;
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
-    outline: 1px solid #ecc31f;
-    outline-style: inset;
-    border-radius: 5px;
+    border-radius: 20px;
     font-family: 'Source Code Pro', monospace;
+    font-size: medium;
+    font-weight: bolder;
     transition: 0.3s;
     resize: none;
 }
@@ -50,7 +50,7 @@
 .textsummary{
     display: flex;
     margin: 5px;
-    padding: 5px;
+    padding: 10px;
 }
 .comments{
     font-size: x-small;
@@ -64,25 +64,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2a2b2e;
-    font-family: 'Space Grotesk', sans-serif;
-    color: #646669;
-    border: none;
-    border-radius: 10px;
-    padding: 5px;
-    margin: 5px;
-    font-size: initial;
-    width: auto;
-    transition: 0.1s;
-}
-.btn:hover{
-    scale: .9;
-    cursor: pointer;
 }
 .replaceContainer{
     /* border: 2px solid blue; */
@@ -166,16 +147,17 @@
     padding: 5px;
 }
 
-#cbox{
+.cboxhidden{
     display: none;
 }
-.extraction{
+.cbox{
     display: flex;
-    flex-direction: column;
+    width: 50%;
+    scale: 1.5;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    margin: 5px;
-    padding: 5px;
+    z-index: 999;
 }
 .previewContainer{
     /* border: 2px solid red; */
@@ -185,9 +167,36 @@
     /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
+    box-shadow: 5px 10px 10px inset;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+.extraction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 5px;
+}
+.occurances{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.clearbtn{
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 #preview{
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
     font-family: 'Source Code Pro', monospace;
+    font-size: large;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -202,7 +211,4 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #8a7627; 
-  }
-  .border{
-    outline: 1px solid black;
   }

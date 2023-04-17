@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   const handleSearch = (e) => {
-    let preview = document.getElementById("preview").innerHTML
+    let preview = document.getElementById("textarea").value
     let searchvalue = document.getElementById("searchbar").value.trim()
     if (searchvalue !== "") {
       let newword = new RegExp(searchvalue, "g"); // search for all instances
@@ -21,16 +21,20 @@ export default function Navbar(props) {
         return count;
       };
       if (preview !== "") {
-        if (findAll(preview.split(" "), searchvalue) === 0) {
-          document.getElementById("occurances").innerHTML = "Not in the text!"
+        console.log(findAll(preview.split(" "), searchvalue))
+        if (findAll(preview.split(" "), searchvalue) !== 0) {
+          document.getElementById("occurances").innerHTML = `Number of occurances : ${findAll(preview.split(" "), searchvalue)}`
+          props.showAlert("Done","See preview for results")
         }
         else {
-          document.getElementById("occurances").innerHTML = `Number of occurances : ${findAll(props.text.split(" "), searchvalue)}`
-          props.showAlert("See preview for results")
+          document.getElementById("occurances").innerHTML = `${searchvalue} not in text!`
+          setTimeout(()=>{
+            document.getElementById("occurances").innerHTML = ""
+          },5000)
         }
       }
       else {
-        props.showAlert("Enter text first!")
+        props.showAlert("Denied","Enter text first")
       }
     }
   }
@@ -43,8 +47,8 @@ export default function Navbar(props) {
           <Link to="/about" className="links" id="aboutlink" style={props.mode}>{props.aboutText}</Link>
         </div>
         <div className="searchContainer" id='searchContainer'>
-          <input type="text" className="searchbar border" style={props.mode} name='search' id='searchbar' />
-          <button className="btn border" id="searchbtn" style={props.mode} name='search' onClick={handleSearch}>Search</button>
+          <input type="text" className="searchbar border" name='search' id='searchbar' />
+          <button className="btn" id="searchbtn" name='search' onClick={handleSearch}>Search</button>
         </div>
       </div>
       <div className="themebtns">

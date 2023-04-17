@@ -34,8 +34,8 @@ function App() {
     color: "black"
   }
   const dark = {
-    backgroundColor: "#323437",
-    color: "#646669",
+    backgroundColor: "black",
+    color: "#c7a318"
   }
   const [mode, setmode] = useState(dark);
   const [alert, setAlert] = useState(null);
@@ -58,39 +58,39 @@ function App() {
     if (greenbtn.checked === true) {
       setmode(green)
       document.body.style.background = "#A7BEAE"
-      showAlert("Applied!", "MintGreen Theme")
+      showAlert("Applied", "MintGreen Theme")
     }
     else if (darkbtn.checked === true) {
       setmode(dark)
-      document.body.style.background = "#323437"
-      showAlert("Applied!", "Dark Theme")
+      document.body.style.background = "black"
+      showAlert("Applied", "Dark Theme")
     }
     else if (peachbtn.checked === true) {
       setmode(peach)
       document.body.style.background = "#EEA47FFF"
-      showAlert("Applied!", "Peach Theme")
+      showAlert("Applied", "Peach Theme")
     }
     else if (redbtn.checked === true) {
       setmode(red)
       document.body.style.background = "#990011FF"
-      showAlert("Applied!", "CherryRed Theme")
+      showAlert("Applied", "CherryRed Theme")
     }
     else if (pinkbtn.checked === true) {
       setmode(pink)
       document.body.style.background = "#e52165"
-      showAlert("Applied!", "Pink Theme")
+      showAlert("Applied", "Pink Theme")
     }
     else if (whitebtn.checked === true) {
       setmode(white)
       document.body.style.background = "white"
-      showAlert("Applied!", "White Theme")
+      showAlert("Applied", "White Theme")
     }
   }
   return (
     <>
       <Router>
         <div style={mode}>
-          <Navbar title="TextandTools" aboutText="About" mode={mode} handlethemes={handlethemes} />
+          <Navbar title="TextandTools" aboutText="About" mode={mode} handlethemes={handlethemes} showAlert={showAlert} />
           <Alert alert={alert} />
           <div>
             <Switch>

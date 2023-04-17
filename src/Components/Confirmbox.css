@@ -1,45 +1,40 @@
-#confirmation{
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-    background-color: #2a2b2e;
-    opacity: 0.8;
-    transition: all .5s;
+#confirmation {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  background-color: #000000f0;
+  color: #c7a318;
+  transition: all 0.5s;
+  border-radius: 20px;
 }
-#confirmation:hover{
-    transform: scale(1.5);
-    background-color: #2425256e;
-    animation: fadeIn 2s;
-    
+#yesnobtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 5px;
+  padding: 5px;
 }
-#yesnobtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 5px;
-    padding: 5px;
+.confirmboxtext {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  justify-content: center;
+  /* color: #646669; */
 }
-.confirmboxtext{
-    display: flex;
-    margin: 5px;
-    padding: 5px;
-    justify-content: center;
-    /* color: #646669; */
+#confirmboxtext {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
-#confirmboxtext{
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+#confirmboxcomment {
+  display: flex;
+  margin-top: 0px;
+  padding-top: 0px;
 }
-#confirmboxcomment{
-    display: flex;
-    margin-top: 0px;
-    padding-top: 0px;
+#yesbtn:hover {
+  background-color: #2ee468;
 }
-#yesbtn:hover{
-    background-color: #2ee468;
-}
-#nobtn:hover{
-    background-color: red;
+#nobtn:hover {
+  background-color: red;
 }
 /* @keyframes scaling {
     from{
