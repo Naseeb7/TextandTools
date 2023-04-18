@@ -4,10 +4,13 @@ import "./TextForm.css"
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
-
+  
+  const handleonChange = (e) => {
+    setText(e.target.value)
+  }
   const handleupClick = () => {
     if (text !== "") {
-      setText(text.toUpperCase())
+      document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toUpperCase()
     }
     else {
       props.showAlert("Denied","Enter text first")
@@ -15,14 +18,11 @@ export default function TextForm(props) {
   }
   const handlelowClick = () => {
     if (text !== "") {
-      setText(text.toLowerCase())
+      document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toLowerCase()
     }
     else {
       props.showAlert("Denied","Enter text first")
     }
-  }
-  const handleonChange = (e) => {
-    setText(e.target.value)
   }
   const handleReplace = () => {
     if (text !== "") {
@@ -42,9 +42,7 @@ export default function TextForm(props) {
   }
   const handleReset = () => {
     if (text !== "") {
-      setText("")
-      document.getElementById("preview").innerHTML = ""
-      document.getElementsByClassName("extraction")[0].innerHTML = ""
+      document.getElementById("preview").innerHTML = text
     }
   }
   const handleTrim = () => {
@@ -69,7 +67,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Please","Enter text first!")
     }
   }
   const handleNumberex = () => {
@@ -84,7 +82,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Please","Enter text first!")
     }
   }
   const handleEmailex = () => {
@@ -99,11 +97,11 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Please","Enter text first!")
     }
   }
   const handleCopy = () => {
-    navigator.clipboard.writeText(text)
+    navigator.clipboard.writeText(document.getElementById("preview").innerHTML)
     if (text !== "") {
       props.showAlert("Success", "Text copied to clipboard!!")
     }
@@ -114,6 +112,10 @@ export default function TextForm(props) {
   const handleClearsearch=()=>{
     document.getElementById("occurances").innerHTML = ""
     document.getElementById("preview").innerHTML = document.getElementById("textarea").value
+  }
+  const handleClearall=()=>{
+    setText("")
+    document.getElementById("occurances").innerHTML=""
   }
   return (
     <>
@@ -146,6 +148,7 @@ export default function TextForm(props) {
             <label htmlFor="trim" className="trim fonts" style={props.mode}>words</label>
             <button htmlFor="trim" className="btn" id="trimbtn" onClick={handleTrim}>Trim</button>
           </div>
+          <button className="clearall btn" onClick={handleClearall}>Clear All</button>
           <div id="cbox" className='cboxhidden'>
             <Confirmbox confirmboxtext={"Are you sure you want to trim?"} comment={"*Please review first"} />
           </div>

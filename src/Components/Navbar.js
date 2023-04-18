@@ -52,13 +52,13 @@ export default function Navbar(props) {
         </div>
       </div>
       <div className="themebtns">
-        <div className="themetext heading">Make it fun :</div>
-        <Sliderbutton type={"radio"} heading={"MintGreen"} style={props.mode} name={"themebtn"} id={"greenbtn"} handlethemes={props.handlethemes} />
-        <Sliderbutton type={"radio"} heading={"Peach"} style={props.mode} name={"themebtn"} id={"peachbtn"} handlethemes={props.handlethemes} />
-        <Sliderbutton type={"radio"} heading={"CherryRed"} style={props.mode} name={"themebtn"} id={"redbtn"} handlethemes={props.handlethemes} />
-        <Sliderbutton type={"radio"} heading={"Pink"} style={props.mode} name={"themebtn"} id={"pinkbtn"} handlethemes={props.handlethemes} />
-        <Sliderbutton type={"radio"} heading={"White"} style={props.mode} name={"themebtn"} id={"whitebtn"} handlethemes={props.handlethemes} />
-        <Sliderbutton type={"radio"} heading={"Dark"} style={props.mode} name={"themebtn"} id={"darkbtn"} handlethemes={props.handlethemes} />
+        <div className="themetext heading">Make it fun with themes:</div>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"MintGreen"} style={props.mode} name={"themebtn"} id={"greenbtn"} handlethemes={props.handlethemes} /></span>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"Peach"} style={props.mode} name={"themebtn"} id={"peachbtn"} handlethemes={props.handlethemes} /></span>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"CherryRed"} style={props.mode} name={"themebtn"} id={"redbtn"} handlethemes={props.handlethemes} /></span>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"Pink"} style={props.mode} name={"themebtn"} id={"pinkbtn"} handlethemes={props.handlethemes} /></span>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"White"} style={props.mode} name={"themebtn"} id={"whitebtn"} handlethemes={props.handlethemes} /></span>
+        <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"Dark"} style={props.mode} name={"themebtn"} id={"darkbtn"} handlethemes={props.handlethemes} /></span>
       </div>
     </>
   )

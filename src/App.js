@@ -87,12 +87,11 @@ function App() {
     }
   }
   return (
-    <>
+    <div className='body'>
       <Router>
         <div style={mode}>
           <Navbar title="TextandTools" aboutText="About" mode={mode} handlethemes={handlethemes} showAlert={showAlert} />
           <Alert alert={alert} />
-          <div>
             <Switch>
               <Route exact path="/">
                 <TextForm showAlert={showAlert} heading="Enter your text to analyze" mode={mode} />
@@ -100,11 +99,10 @@ function App() {
               <Route exact path="/about">
                 <About mode={mode} />
               </Route>
-            </Switch>
-          </div>
+            </Switch> 
         </div>
       </Router>
-    </>
+    </div>
   );
 }
 
