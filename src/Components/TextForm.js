@@ -101,8 +101,8 @@ export default function TextForm(props) {
     }
   }
   const handleCopy = () => {
-    navigator.clipboard.writeText(document.getElementById("preview").innerHTML)
     if (text !== "") {
+      navigator.clipboard.writeText(document.getElementById("preview").innerHTML)
       props.showAlert("Success", "Text copied to clipboard!!")
     }
     else {
