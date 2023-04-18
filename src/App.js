@@ -87,9 +87,8 @@ function App() {
     }
   }
   return (
-    <div className='body'>
+    <div className='body' style={mode}>
       <Router>
-        <div style={mode}>
           <Navbar title="TextandTools" aboutText="About" mode={mode} handlethemes={handlethemes} showAlert={showAlert} />
           <Alert alert={alert} />
             <Switch>
@@ -100,7 +99,6 @@ function App() {
                 <About mode={mode} />
               </Route>
             </Switch> 
-        </div>
       </Router>
     </div>
   );

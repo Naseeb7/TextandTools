@@ -13,7 +13,7 @@ export default function TextForm(props) {
       document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toUpperCase()
     }
     else {
-      props.showAlert("Denied","Enter text first")
+      props.showAlert("Enter text","please")
     }
   }
   const handlelowClick = () => {
@@ -21,7 +21,7 @@ export default function TextForm(props) {
       document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toLowerCase()
     }
     else {
-      props.showAlert("Denied","Enter text first")
+      props.showAlert("Enter text","please")
     }
   }
   const handleReplace = () => {
@@ -37,7 +37,7 @@ export default function TextForm(props) {
       props.showAlert("Success", "Replaced word successfully!")
     }
     else {
-      props.showAlert("Enter text first!")
+      props.showAlert("Enter text","please")
     }
   }
   const handleReset = () => {
@@ -67,7 +67,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Please","Enter text first!")
+      props.showAlert("Enter text","please")
     }
   }
   const handleNumberex = () => {
@@ -82,7 +82,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Please","Enter text first!")
+      props.showAlert("Enter text","please")
     }
   }
   const handleEmailex = () => {
@@ -97,7 +97,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Please","Enter text first!")
+      props.showAlert("Enter text","please")
     }
   }
   const handleCopy = () => {
@@ -110,8 +110,10 @@ export default function TextForm(props) {
     }
   }
   const handleClearsearch=()=>{
-    document.getElementById("occurances").innerHTML = ""
-    document.getElementById("preview").innerHTML = document.getElementById("textarea").value
+    if(document.getElementById("textarea").value!==""){
+      document.getElementById("occurances").innerHTML = ""
+      document.getElementById("preview").innerHTML = document.getElementById("textarea").value
+    }
   }
   const handleClearall=()=>{
     setText("")

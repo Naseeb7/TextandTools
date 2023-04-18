@@ -187,6 +187,8 @@
     padding: 5px;
 }
 .occurances{
+    width: 30%;
+    overflow-wrap: anywhere;
     position: absolute;
     top: 20px;
     right: 20px;
