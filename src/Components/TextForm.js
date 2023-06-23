@@ -4,24 +4,24 @@ import "./TextForm.css"
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
-  
+
   const handleonChange = (e) => {
     setText(e.target.value)
   }
   const handleupClick = () => {
     if (text !== "") {
-      document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toUpperCase()
+      document.getElementById("preview").innerHTML = document.getElementById("preview").innerHTML.toUpperCase()
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handlelowClick = () => {
     if (text !== "") {
-      document.getElementById("preview").innerHTML=document.getElementById("preview").innerHTML.toLowerCase()
+      document.getElementById("preview").innerHTML = document.getElementById("preview").innerHTML.toLowerCase()
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handleReplace = () => {
@@ -37,7 +37,7 @@ export default function TextForm(props) {
       props.showAlert("Success", "Replaced word successfully!")
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handleReset = () => {
@@ -67,7 +67,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handleNumberex = () => {
@@ -82,7 +82,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handleEmailex = () => {
@@ -97,7 +97,7 @@ export default function TextForm(props) {
       }
     }
     else {
-      props.showAlert("Enter text","please")
+      props.showAlert("Enter text", "please")
     }
   }
   const handleCopy = () => {
@@ -109,15 +109,15 @@ export default function TextForm(props) {
       props.showAlert("Empty", "Nothing to copy")
     }
   }
-  const handleClearsearch=()=>{
-    if(document.getElementById("textarea").value!==""){
+  const handleClearsearch = () => {
+    if (document.getElementById("textarea").value !== "") {
       document.getElementById("occurances").innerHTML = ""
       document.getElementById("preview").innerHTML = document.getElementById("textarea").value
     }
   }
-  const handleClearall=()=>{
+  const handleClearall = () => {
     setText("")
-    document.getElementById("occurances").innerHTML=""
+    document.getElementById("occurances").innerHTML = ""
   }
   return (
     <>
@@ -157,8 +157,8 @@ export default function TextForm(props) {
         </div>
       </div>
       <div className="previewContainer" >
-          <button className='btn clearbtn' onClick={handleClearsearch}>Clear Search</button>
         <h2 className='heading' style={props.mode}>Preview</h2>
+        <button className='btn clearbtn' onClick={handleClearsearch}>Clear Search</button>
         <span id='occurances' className='occurances fonts' style={props.mode}></span>
         <p id='preview'>{text.length > 0 ? text : "Enter text to preview it here."}</p>
         <div className="extraction heading">
@@ -169,6 +169,3 @@ export default function TextForm(props) {
     </>
   )
 }
-//Tasks to add :
-// Email-extractor,number-extractor,text-clear,trim to number of words by user,replace words,give searchbar a function to search within text
-// Done

@@ -1,6 +1,7 @@
 .sliderContainer{
     display: flex;
     flex-direction: row;
+    gap: .5rem;
     /* border: 2px solid blue; */
     transition: .2s;
 }

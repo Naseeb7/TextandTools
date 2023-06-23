@@ -21,7 +21,6 @@ export default function Navbar(props) {
         return count;
       };
       if (preview !== "") {
-        console.log(findAll(preview.split(" "), searchvalue))
         if (findAll(preview.split(" "), searchvalue) !== 0) {
           document.getElementById("occurances").innerHTML = `Number of occurances : ${findAll(preview.split(" "), searchvalue)}`
           props.showAlert("Done","See preview for results")
@@ -51,8 +50,8 @@ export default function Navbar(props) {
           <button className="btn" id="searchbtn" name='search' onClick={handleSearch}>Search</button>
         </div>
       </div>
-      <div className="themebtns">
         <div className="themetext heading">Make it fun with themes:</div>
+      <div className="themebtns">
         <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"MintGreen"} style={props.mode} name={"themebtn"} id={"greenbtn"} handlethemes={props.handlethemes} /></span>
         <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"Peach"} style={props.mode} name={"themebtn"} id={"peachbtn"} handlethemes={props.handlethemes} /></span>
         <span className="sliderBtn"><Sliderbutton type={"radio"} heading={"CherryRed"} style={props.mode} name={"themebtn"} id={"redbtn"} handlethemes={props.handlethemes} /></span>

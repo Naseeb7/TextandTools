@@ -63,7 +63,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 5px;
     margin: 5px;
 }
@@ -166,16 +166,16 @@
     z-index: 999;
 }
 .previewContainer{
-    /* border: 2px solid red; */
+    border-right: 1px solid;
+    border-left: 1px solid;
     position: relative;
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; */
     align-items: center;
     justify-content: center;
-    box-shadow: 5px 10px 10px inset;
-    margin: 10px;
-    padding: 10px;
+    margin: 2rem;
+    padding: 1rem;
     border-radius: 20px;
 }
 .extraction{
@@ -194,18 +194,15 @@
     right: 20px;
 }
 .clearbtn{
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 20%;
+    align-self: flex-start;
 }
 #preview{
-    width: 80%;
+    width: 100%;
     padding: 10px;
     margin: 10px;
-    font-weight: bold;
     font-family: 'Source Code Pro', monospace;
-    font-size: large;
+    /* font-size: large; */
+    line-height: 1.2rem;
 }
 ::-webkit-scrollbar {
     width: 5px;
@@ -220,4 +217,14 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: #8a7627; 
+  }
+
+  @media screen  and (max-width: 480px) {
+    .btncontainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .clearbtn{
+        align-self: center;
+    }
   }

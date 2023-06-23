@@ -8,7 +8,6 @@
     flex-wrap: wrap;
     align-items: flex-start;
     /* background-color: #c7a318; */
-    align-items: center;
     justify-content: space-between;
     /* margin: 5px; */
     padding: 5px;
@@ -91,3 +90,15 @@
 #searchbtn:hover{
     scale: 1;
 }
+
+@media screen  and (max-width: 480px) {
+    .themebtns{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .navbarContainer{
+        flex-direction: column;
+       align-items: center;
+       gap: 1rem;
+    }
+  }
